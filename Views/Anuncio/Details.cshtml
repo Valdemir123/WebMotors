@@ -1,0 +1,64 @@
+﻿@model AnuncioWebMotors.Models.Class_Anuncio
+
+@{
+    ViewData["Title"] = "CONSULTAR MEU ANÚNCIO";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    ||&nbsp;&nbsp;<a class="btn btn-info" asp-action="Index">Voltar para a LISTAGEM</a>
+</p>
+<br />
+<br />
+<div class="row">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(m => m.Marca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.Marca)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(m => m.Modelo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.Modelo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(m => m.Versao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.Versao)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(m => m.Ano)
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.Ano)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(m => m.Quilometragem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.Quilometragem)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(m => m.Observacao)
+        </dt>
+        <dd>
+            @Html.DisplayTextFor(m => m.Observacao)
+        </dd>
+    </dl>
+
+    <div>
+        <br />
+        <br />
+        ||&nbsp;&nbsp;<a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-success">Alterar !</a> |
+    </div>
+</div>

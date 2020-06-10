@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AnuncioWebMotors.Models.Class_Anuncio>
+
+@{
+    ViewData["Title"] = "MEUS ANÚNCIOS";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <strong>Novos Anúncios:</strong>&nbsp;&nbsp;||&nbsp;&nbsp;<a class="btn btn-success" asp-action="Create">Incluir</a>&nbsp;&nbsp;||
+</p>
+<br />
+<br />
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(m => m.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Versao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Quilometragem)
+            </th>
+            <th>||&nbsp;&nbsp;Ações&nbsp;&nbsp;||</th>
+        </tr>
+        <tr class="success">
+            <th colspan="5">
+                @Html.DisplayNameFor(m => m.Observacao)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Versao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quilometragem)
+                </td>
+                <td>
+                    ||&nbsp;&nbsp;<a class="btn btn-info" asp-action="Details" asp-route-id="@item.ID">Consultar</a>&nbsp;&nbsp;
+                    ||&nbsp;&nbsp;<a class="btn btn-success" asp-action="Edit" asp-route-id="@item.ID">Atualizar</a>&nbsp;&nbsp;
+                    ||&nbsp;&nbsp;<a class="btn btn-warning" asp-action="Delete" asp-route-id="@item.ID">Remover</a>&nbsp;&nbsp;
+                    ||
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" style="width:65%">
+                    @Html.DisplayFor(modelItem => item.Observacao)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

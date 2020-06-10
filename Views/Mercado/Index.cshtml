@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AnuncioWebMotors.Models.Class_Mercado>
+@{
+    ViewData["Title"] = "Web Motors MERCADO DE CARROS";
+}
+<h2>@ViewData["Title"]</h2>
+<br />
+<br />
+<div>
+    <strong>Página:</strong>&nbsp; &nbsp;
+    <a asp-action="Index" asp-route-_PageId="1">1</a>,&nbsp; &nbsp;
+    <a asp-action="Index" asp-route-_PageId="2">2</a>,&nbsp; &nbsp;
+    <a asp-action="Index" asp-route-_PageId="3">3</a>
+</div>
+<hr />
+<br />
+
+<table class="table table-striped table-hover">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img style="width:auto; max-width:170px; height:auto; max-height:120px" src="@item.ImageLink" />
+                </td>
+                <td>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.Make):</strong>&nbsp; @Html.DisplayFor(modelItem => item.Make)</p>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.Model):</strong>&nbsp; @Html.DisplayFor(modelItem => item.Model)</p>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.Version):</strong>&nbsp; @Html.DisplayFor(modelItem => item.Version)</p>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.Color):</strong>&nbsp; @Html.DisplayFor(modelItem => item.Color)</p>
+                </td>
+                <td>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.KM):</strong>&nbsp; @Html.DisplayFor(modelItem => item.KM)</p>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.Price):</strong>&nbsp;R$&nbsp; @Html.DisplayFor(modelItem => item.Price)</p>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.YearModel):</strong>&nbsp; @Html.DisplayFor(modelItem => item.YearModel)</p>
+                    <p><strong> @Html.DisplayNameFor(modelItem => item.YearFab):</strong>&nbsp; @Html.DisplayFor(modelItem => item.YearFab)</p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
